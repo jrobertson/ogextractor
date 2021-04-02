@@ -34,6 +34,8 @@ class OgExtractor
       {card: @card, title: @title, img: @image, desc: @description, url:  @url}
               
     else
+      
+      @card = 'summary'
                           
       if img then
         
