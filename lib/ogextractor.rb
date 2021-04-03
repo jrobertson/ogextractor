@@ -8,7 +8,7 @@ require 'nokorexi'
 
 class OgExtractor
 
-  attr_reader *%i(title description image url type to_h)
+  attr_reader *%i(head title description image url type to_h)
 
   def initialize(article_url, debug: false)
 
