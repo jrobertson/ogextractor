@@ -12,7 +12,7 @@ class OgExtractor
 
   def initialize(article_url, debug: false)
 
-    @debug = debug
+    @article_url, @debug = article_url, debug
     @properties = %w(title description image url type)
     @doc = Nokorexi.new(article_url).to_doc
     extract_metadata()
@@ -37,7 +37,7 @@ class OgExtractor
       
       @card = 'summary'
                           
-      if img then
+      if @image and @image.length > 1 then
         
         {card: @card, title: @title, img: @image, desc: @description, url:  @url}
 
