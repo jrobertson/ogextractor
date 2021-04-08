@@ -27,7 +27,8 @@ class OgExtractor
 
     read_og_meta()
     read_twitter_meta()
-    @url ||= @article_url
+    @url ||= @article_url    
+    @image = @article_url[/^https?:/] + @image if @image and @image[/^\/\//]
 
     @to_h = if @card then
 
